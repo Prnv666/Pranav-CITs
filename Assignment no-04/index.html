@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment No-04</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    html,body{
+        height: 100vh;
+        width: 100%;
+
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+    }
+    #main{
+        height: 100%;
+        width: 100%;
+        position: relative; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background-color: aqua; */
+    }
+    
+    #user-data{
+        height: 70%;
+        width: 50%;
+        position:   relative;
+        /* background-color: red; */
+        margin-left: 2vw;
+        margin-right: .31vw;
+        padding: 3vw 5vw;
+        border: 1px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    #user-data label{
+        font-size: 30px;
+    }
+    #user-data input{
+        height: 3vw;
+        padding: 2vw 3vw;
+        font-size: 2vw;
+    }
+    #user-data #label-phone{
+        margin-top: 2vw;
+    }
+    #user-data button{
+        margin-top: 5vw;
+        width: 30%;
+        height: 3vw;
+        margin-left: 30%;
+    }
+    #server-data{
+        margin-right: 2vw;
+        height: 70%;
+        width: 50%;
+        /* background-color: maroon; */
+        padding: 3vw 5vw;
+        border: 1px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    #server-data label{
+        font-size: 30px;
+    }
+    #server-data input{
+        height: 3vw;
+        padding: 2vw 3vw;
+        font-size: 2vw;
+    }
+    #server-data #label-phone{
+        margin-top: 2vw;
+    }
+    #server-data button{
+        margin-top: 5vw;
+        width: 30%;
+        height: 3vw;
+        margin-left: 30%;
+    }
+
+</style>
+<body>
+    <div id="main">
+        <div id="user-data">
+            <label for="name" >Name:</label>
+            <input type="text" id="user-name" placeholder="Enter Your Name ">
+
+            <label for="phone" id="label-phone">Phone No:</label>
+            <input type="text" name="" id="user-phone" placeholder="Enter Your Number">
+
+            <button id="user-btn">Send <i class="ri-arrow-right-line"></i></button>
+        </div>
+        <div id="server-data">
+            <label for="name" >Name:</label>
+            <input type="text" id="server-name" placeholder="User's Name ">
+
+            <label for="phone" id="label-phone"> Phone No:</label>
+            <input type="text" name="" id="server-phone" placeholder="User's Phone Number">
+
+            <button id="server-btn">Add Again</button>
+        </div>
+    </div>
+
+    <script>
+
+       document.getElementById("user-btn").addEventListener("click", function(){
+        var name = document.getElementById("user-name") ;
+        var phone = document.getElementById("user-phone")
+
+        document.getElementById("server-name").value = name.value ;
+        document.getElementById("server-phone").value = phone.value ;
+       })
+
+       document.getElementById("server-btn").addEventListener("click", function() {
+        var name = document.getElementById("user-name") ;
+        var phone = document.getElementById("user-phone") ;   
+
+        var serverName = document.getElementById("server-name") ;
+        var serverPhonr = document.getElementById("server-phone") ;
+
+        serverName.value = "" ;
+        serverPhonr.value = "" ;
+
+        name.value = document.getElementById("user-name").value.reset ;
+        phone.value = document.getElementById("user-phone").value.reset ;
+
+        document.getElementById("user-name").value = ""
+        document.getElementById("user-phone").value = ""
+       })
+
+
+
+    </script>
+</body>
+</html>

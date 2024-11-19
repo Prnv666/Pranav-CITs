@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArithMatic Ops</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    html,body{
+        height: 100vh;
+        width: 100%;
+        background-color: wheat;
+    }
+    marquee{
+        font-size: 2vw;
+        color:rgb(219, 97, 52);
+        background-color: whitesmoke;
+        margin: 1vw 1vw;
+        padding: 1vw 1vw;
+        /* border: 2px solid black; */
+    }
+        /* NUMBERS INPUT  */
+    .enter-nums{
+        /* background-color: yellow; */
+        height: 100px;
+        width: 100%;
+        padding: 2vw 5vw;
+    }
+
+    #num1, #num2{
+       font-size: 2vw;
+       font-weight: 700;
+        padding-right: 1vw;
+       
+    }
+    #num1-inp , #num2-inp{
+        padding: 10px 10px;
+        width: 15vw;
+        margin-right: 5vw;
+        font-size: 30px;
+        
+
+    }
+
+    /* OPERATIONS */
+    .operations{
+        height: 100px;
+        width: 100%;
+        /* background-color: orangered; */
+        padding: 2vw 5vw;
+        margin-top: 1vw;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1vw ;
+    }
+    .operations button{
+        padding-left: 2vw;
+        padding-right: 2vw;
+        /* background-color: rgba(255, 85, 0, 0.495); */
+        border: none;
+        box-shadow: 5px 5px 10px  black;
+        cursor: pointer;
+        border-radius: 15px;
+        font-size: 20px;
+        /* color: aliceblue; */
+        font-weight: 700;
+    }
+    /* OPERATIONS PERFORMED INPUT  */
+    .op-perform{
+        height: 100px;
+        width: 100%;
+        /* background-color: yellow; */
+        padding: 2vw 25vw;
+    }
+    .op-perform label{
+        font-size: 2vw;
+        font-weight: 700;
+        padding-right: 1vw;
+    }
+    #operation{
+        padding: 10px 10px;
+        width: 15vw;
+        margin-right: 5vw;
+        font-size: 30px;
+        width: 30vw;
+    }
+    /* ANSWERS DIV */
+    .answers{
+        height: 100px;
+        width: 100%;
+        /* background-color: yellowgreen; */
+        padding: 2vw 25vw;
+        margin-top: 1vw;
+    }
+    .answers label{
+        font-size: 2vw;
+        font-weight: 700;
+        padding-right: 1vw;
+    }
+    .answers #result{
+        padding: 10px 10px;
+        width: 30vw;
+        height: 5vw;
+        font-size: 30px;
+        /* font-weight: 700; */
+    }
+</style>
+
+
+<body>
+    <marquee behavior="alternate" direction="right"><h1>Basic Calculator</h1></marquee>
+
+    <!-- DIV FOR INPUT OF NUMBERS  -->
+    <div class="enter-nums">
+        <label for="num1" id="num1">Enter First Number: </label>
+        <input type="text" name="num1" id="num1-inp">
+   
+        <label for="num2" id="num2">Enter Second Number: </label>
+        <input type="text" name="num1" id="num2-inp">
+    </div>
+
+    <!-- DIV FOR OPERATIONS -->
+     <div class="operations">
+        <button id="add">ADDITION</button>
+        <button id="sub">SUBSTRACTION</button>
+        <button id="mul">MULTIPLICATION</button>
+        <button id="div">DIVISION</button>  
+        <button id="mod">MODULOS</button>
+    </div>
+    <!-- OPERATION PERFORMED -->
+      <div class="op-perform">
+        <label for="operation" id="operation-lab">Operation: </label>
+        <input type="text" id="operation">
+      </div>
+     <!-- ANSWER'S DIV -->
+      <div class="answers">
+        <label for="result" id="result-lab">Result: </label>
+        <input type="text" id="result">
+      </div>
+</body>
+
+
+<script>
+    document.getElementById("add").addEventListener("click", () => {
+    var inOne = document.getElementById("num1-inp").value ;
+    var inTwo = document.getElementById("num2-inp").value ;
+    var addResult = parseInt(inOne) + parseInt(inTwo) ;
+
+    document.getElementById("operation").value = "Addition"
+    document.getElementById("result").value = addResult ;
+
+})
+
+document.getElementById("sub").addEventListener("click", () => {
+    var inOne = document.getElementById("num1-inp").value ;
+    var inTwo = document.getElementById("num2-inp").value ;
+    var addResult = parseInt(inOne) - parseInt(inTwo) ;
+
+    document.getElementById("operation").value = "Substration"
+    document.getElementById("result").value = addResult ;
+
+})
+
+document.getElementById("mul").addEventListener("click", () => {
+    var inOne = document.getElementById("num1-inp").value ;
+    var inTwo = document.getElementById("num2-inp").value ;
+    var addResult = parseInt(inOne) * parseInt(inTwo) ;
+
+    document.getElementById("operation").value = "Multiplication"
+    document.getElementById("result").value = addResult ;
+
+})
+
+document.getElementById("div").addEventListener("click", () => {
+    var inOne = document.getElementById("num1-inp").value ;
+    var inTwo = document.getElementById("num2-inp").value ;
+    var addResult = parseInt(inOne) / parseInt(inTwo) ;
+
+    document.getElementById("operation").value = "Division"
+    document.getElementById("result").value = addResult ;
+
+})
+
+document.getElementById("mod").addEventListener("click", () => {
+    var inOne = document.getElementById("num1-inp").value ;
+    var inTwo = document.getElementById("num2-inp").value ;
+    var addResult = parseInt(inOne) % parseInt(inTwo) ;
+
+    document.getElementById("operation").value = "Modulos"
+    document.getElementById("result").value = addResult ;
+
+})
+</script>
+</html>

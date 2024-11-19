@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onKeyup Event Form</title>
+</head>
+<style>
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    html,body{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    marquee{
+        width: 100%;
+        background-color: rgba(255, 0, 255, 0.244);
+        height: 3vw;
+        color: orange;
+        position: relative;
+        display: flex;
+        top: 2vw;
+    }
+    #form{
+        height: 80%;
+        width: 60%;
+        /* background-color: blueviolet; */
+        position: relative;
+        top: 3.5vw;
+        left: 20%;
+        /* padding: 10px 30px; */
+    }
+    #user-info{
+        position: relative;
+        height: 50%;
+        width: 100%;
+        /* padding: 10px 30px; */
+        background-color: rgba(255, 0, 0, 0.518);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #server-info{
+        position: relative;
+        height: 50%;
+        width: 100%;
+        /* padding: 10px 30px; */
+        background-color: rgba(128, 0, 0, 0.511);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #server-info #server-mail, #user-mail, #user-pass{
+        padding: 10px 30px;
+    }
+    #server-info #server-pass{
+        margin-bottom: 3vw;
+        padding: 10px 30px;
+    }
+    #server-info button{
+        padding: 10px 30px;
+        margin-left: 30%;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <!--     QUE-
+                    Make a form to accept data from the user and make it recieve to the server end and 
+                    allow option to see the password at server side only not the user end  when clicked on the view button
+             -->
+
+        
+        <marquee behavior="alternate" direction="right"><h1>Server Data Collection Form</h1></marquee>
+        <div id="form">
+            <div id="user-info">
+                <form id="user-form">
+                    <label for="form">Mail</label>
+                    <input type="text" id="user-mail" placeholder="Enter Your mail" onkeyup="getMail()">
+
+                    <label for="form">Password</label>
+                    <input type="password" id="user-pass" name="user-password" placeholder="Enter Your password" onkeyup="getPass()">
+                    
+                </form>
+            </div>
+            <div id="server-info">
+                <form id="server-form">
+                    <label for="form">Mail</label>
+                    <input type="text" id="server-mail" placeholder="Enter Your Mail" >
+                    
+                    <label for="form">Password</label>
+                    <input type="password" id="server-pass" name="server-password" placeholder="Enter Your Password">                    
+                </form>
+                <button id="view-pass" onclick="viewPass()">View Pass</button>
+            </div>
+        </div>
+</body>
+
+<script>
+       function getMail() {
+        var user_mail = document.getElementById("user-mail").value ;
+        // console.log(user_mail)
+        document.getElementById("server-mail").value = user_mail
+       }
+
+       function getPass() {
+        var user_mail = document.getElementById("user-pass").value ;
+        // console.log(user_mail)
+        document.getElementById("server-pass").value = user_mail
+       }
+
+       function viewPass() {
+        var serverPassInput = document.getElementById("server-pass").value ;
+        console.log(serverPassInput.value = serverPassInput)
+            
+       }
+</script>
+</html>
